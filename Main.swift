@@ -132,14 +132,13 @@ struct HomeView: View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-            VStack(spacing: 20) {
+            VStack(spacing: 30) {
                 Image("sglogo")
                     .resizable()
-                    .frame(width: 120, height: 120)
+                    .frame(width: 200, height: 200)
                     .clipShape(Circle())
-                    .shadow(radius: 10)
+                    .shadow(radius: 20)
                     .scaleEffect(showLogoAnimation ? 1.2 : 1)
-                    .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: showLogoAnimation)
                 Text("Welcome to SG60")
                     .font(.system(size: CGFloat(fontSize * 1.5)).bold()) // Adjusted for font size
                     .foregroundColor(.white)
@@ -599,7 +598,7 @@ struct SettingsView: View {
 }
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        HomeView()
             .preferredColorScheme(.light) // Adjust for light/dark mode
     }
 }
